@@ -1,0 +1,12 @@
+{
+  "name": "kriative-app",
+  "version": "1.0.0",
+  "description": "Kriative App for generating viral content",
+  "scripts": {
+    "build:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
