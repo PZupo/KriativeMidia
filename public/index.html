@@ -1,90 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kriative</title>
-  <style>
-    /* Adicione estilos CSS para melhorar a aparência */
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-    form { display: flex; flex-direction: column; gap: 10px; }
-    select, input, button { padding: 10px; font-size: 16px; }
-    button { cursor: pointer; background-color: #007bff; color: white; border: none; }
-    button:hover { background-color: #0056b3; }
-    #generated-content { margin-top: 20px; }
-    .modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border: 1px solid #ccc; }
-  </style>
-</head>
-<body>
-  <h1>Kriative</h1>
-  <p>Escolha a plataforma, o estilo e insira o seu prompt para criar conteúdo viral.</p>
-
-  <form id="content-form">
-    <label>Plataforma</label>
-    <select name="platform" required>
-      <option value="Instagram">Instagram</option>
-      <option value="TikTok">TikTok</option>
-      <option value="YouTube">YouTube</option>
-      <option value="Twitter">Twitter</option>
-    </select>
-
-    <label>Estilo</label>
-    <select name="style" required>
-      <option value="Padrão">Padrão</option>
-      <option value="Estilo Mangá">Estilo Mangá</option>
-      <option value="Humorístico">Humorístico</option>
-      <option value="Sério">Sério</option>
-    </select>
-
-    <label>Formato</label>
-    <select name="format" required>
-      <option value="Imagem">Imagem</option>
-      <option value="Vídeo">Vídeo</option>
-      <option value="Revista">Revista</option>
-      <option value="Post">Post</option>
-    </select>
-
-    <label>Número de Páginas</label>
-    <input type="number" name="pages" min="1" max="100" value="1" required>
-
-    <label>Estilo de Imagem</label>
-    <select name="imageStyle" required>
-      <option value="Realista">Realista</option>
-      <option value="Cartoon">Cartoon</option>
-      <option value="Anime">Anime</option>
-      <option value="Pintura">Pintura</option>
-    </select>
-
-    <label>Tipo de Entrada</label>
-    <select name="inputType" required>
-      <option value="Prompt de Texto">Prompt de Texto</option>
-      <option value="Prompt de Imagem">Prompt de Imagem</option>
-    </select>
-
-    <label>Descrição do Conteúdo</label>
-    <textarea name="contentDescription" required></textarea>
-
-    <label>Carregar Imagem</label>
-    <input type="file" name="imageData" accept="image/*">
-
-    <button type="submit">Gerar Conteúdo</button>
-    <button type="button" id="subscribe-premium">Assinar Plano Premium</button>
-  </form>
-
-  <div id="generated-content">Conteúdo Gerado</div>
-
-  <a href="#" id="download-content" style="display: none;">Baixar Conteúdo</a>
-
-  <div id="success-modal" class="modal">
-    <h2>Conteúdo Gerado com Sucesso!</h2>
-    <p>Seu conteúdo foi gerado e salvo. Deseja criar outro?</p>
-    <button onclick="document.getElementById('success-modal').style.display='none'">Fechar</button>
-    <button onclick="document.getElementById('content-form').reset();document.getElementById('success-modal').style.display='none'">Criar Novo</button>
-  </div>
-
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-functions.js"></script>
-  <script src="https://js.stripe.com/v3/"></script>
-  <script src="client.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kriative Social Studio</title>
+    <!-- Font Awesome for icons used throughout the app -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^18.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^18.2.0/",
+    "@supabase/supabase-js": "https://aistudiocdn.com/supabase/supabase-js@^2.58.0",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+    "jspdf-autotable": "https://aistudiocdn.com/jspdf-autotable@^3.8.2"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
